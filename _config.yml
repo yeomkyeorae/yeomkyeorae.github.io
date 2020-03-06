@@ -18,10 +18,10 @@ remote_theme : mmistakes/minimal-mistakes
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Yeomlog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "Yeom, Kyoerae"
 description              : "An amazing website."
 url                      : "https://yeomkyeorae.github.io"
 baseurl                  : ""
