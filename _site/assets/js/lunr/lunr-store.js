@@ -12,9 +12,9 @@ var store = [{
         "teaser": null
       },{
         "title": "서시 - 윤동주",
-        "excerpt":" ","categories": [],
+        "excerpt":" ","categories": ["윤동주"],
         "tags": [],
-        "url": "http://localhost:4000/si-susi/",
+        "url": "http://localhost:4000/%EC%9C%A4%EB%8F%99%EC%A3%BC/si-susi/",
         "teaser": null
       },{
         "title": "github.io 블로그 시작하기",
