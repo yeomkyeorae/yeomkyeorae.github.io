@@ -11,7 +11,7 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
   - title : "블로그 방문하기"
-    url: https://yeomkyeorae.github.io
+    url : https://yeomkyeorae.github.io
   - title : "About"
     url : /about/
   - title : "Category"
