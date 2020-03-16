@@ -89,5 +89,5 @@ conda install sqlalchemy
 
  데이터가 DB에 들어갔는지 확인해 보고 마치도록 하겠습니다.
 
-![.]({{ site.url }}/img/200316/2.JPG)
+![.]({{ site.url }}/_img/200316/2.JPG)
 
