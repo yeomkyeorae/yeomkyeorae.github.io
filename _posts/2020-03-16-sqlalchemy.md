@@ -62,7 +62,7 @@ conda install sqlalchemy
 
  먼저 코드 부터 살펴보겠습니다. 아래 코드가 전부입니다.
 
-![.](/images/200316/1.JPG){:class="img-responsive"}
+![1]({{ site.baseurl }}/images/200316/1.JPG)
 
  `DB 연결` 부분부터 살펴보겠습니다. 
 
@@ -89,5 +89,5 @@ conda install sqlalchemy
 
  데이터가 DB에 들어갔는지 확인해 보고 마치도록 하겠습니다.
 
-![.](/images/200316/2.JPG){:class="img-responsive"}
+![2]({{ site.baseurl }}/images/200316/2.JPG)
 
