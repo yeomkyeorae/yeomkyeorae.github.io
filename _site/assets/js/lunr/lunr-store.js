@@ -1,25 +1,7 @@
 var store = [{
-        "title": "Welcome to Jekyll!",
-        "excerpt":"You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when...","categories": ["jekyll","update"],
-        "tags": [],
-        "url": "https://yeomkyeorae.github.io/jekyll/update/first-post/",
-        "teaser": null
-      },{
-        "title": "hihihihi!",
-        "excerpt":"You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when...","categories": ["jekyll","update"],
-        "tags": [],
-        "url": "https://yeomkyeorae.github.io/jekyll/update/haha-yeom/",
-        "teaser": null
-      },{
-        "title": "서시 - 윤동주",
-        "excerpt":" ","categories": ["윤동주"],
-        "tags": [],
-        "url": "https://yeomkyeorae.github.io/%EC%9C%A4%EB%8F%99%EC%A3%BC/si-susi/",
-        "teaser": null
-      },{
-        "title": "github.io 블로그 시작하기",
-        "excerpt":"GitHub Blog 서비스인 github.io 블로그 시작하기로 했다. GitHub Blog 서비스의 이름은 Pages이다. Pages가 다른 블로그 플랫폼 보다 편한 것 같아서 마음에 든다. 다른 사람들도 같이 많이 사용했으면 좋겠다는 생각이 든다. YFM에서 정의한 제목을 이중 괄호 구문으로 본문에 추가할 수 있다. 이 글의 제목은 github.io 블로그 시작하기이고 마지막으로 수정된 시간은 2019-04-13...","categories": ["Blog"],
-        "tags": ["Blog"],
-        "url": "https://yeomkyeorae.github.io/blog/test/",
+        "title": "sqlalchemy를 이용해서 pandas로 MariaDB에 데이터 insert하기",
+        "excerpt":"MySQL workbench나 console 등을 활용해서 DB에 데이터를 Insert 할 수도 있지만 파이썬의 경우에는 여러 패키지를 활용해서 DB에 접근할 수도 있습니다. 여기서는 sqlalchemy를 사용해서 DB에 데이터(WTI, 서부 텍사스 중질유)를 Insert 해보도록 하겠습니다. sqlalchemy.org에서는 sqlalchemy를 어플리케이션 개발자들에게 SQL의 유연성과 파워풀함을 제공해주는 파이썬 toolkit 또는 ORM(Object Relational Mapper)라고 표현했네요. 저는 Anaconda3 환경에서 진행했습니다....","categories": ["pandas"],
+        "tags": ["python","mariadb","pandas"],
+        "url": "http://localhost:4000/pandas/sqlalchemy/",
         "teaser": null
       }]

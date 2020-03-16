@@ -1,0 +1,74 @@
+I"*<p>MySQL workbench나 console 등을 활용해서 DB에 데이터를 Insert 할 수도 있지만 파이썬의 경우에는 여러 패키지를 활용해서 DB에 접근할 수도 있습니다.</p>
+
+<p>여기서는 sqlalchemy를 사용해서 DB에 데이터(WTI, 서부 텍사스 중질유)를 Insert 해보도록 하겠습니다.</p>
+
+<p><a href="sqlalchemy.org">sqlalchemy.org</a>에서는 sqlalchemy를 어플리케이션 개발자들에게 SQL의 유연성과 파워풀함을 제공해주는 파이썬 toolkit 또는 ORM(Object Relational Mapper)라고 표현했네요.</p>
+
+<p>저는 Anaconda3 환경에서 진행했습니다.</p>
+
+<h1 id="1-db-user-생성-및-권한-부여">1. DB user 생성 및 권한 부여</h1>
+
+<p>여기서 DB는 <a href="https://downloads.mariadb.org/">MariaDB 10.4.12 버전</a>을 설치해 사용했습니다. DB 설치법을 다루지는 않겠습니다.</p>
+
+<p>먼저,  아래와 같은 명령어로 user를 생성합니다. user 이름과 비밀번호를  동일하게 <code class="highlighter-rouge">yeom</code>으로 만들겠습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE USER 'yeom' IDENTIFIED BY 'yeom';
+</code></pre></div></div>
+
+<p>이제 데이터를 넣을  <code class="highlighter-rouge">price</code> database를 생성하도록 하겠습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE DATABASE price;
+</code></pre></div></div>
+
+<p>user <code class="highlighter-rouge">yeom</code>이 <code class="highlighter-rouge">price</code>  database에 접근할 수 있는 권한을 부여하도록 하겠습니다.</p>
+
+<p>권한을 주지 않으면 <code class="highlighter-rouge">Access Denied</code> 오류가 발생할 수 있으므로 이를 방지하고자 함입니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRANT ALL PRIVILEGES ON alchemy.* TO 'yeom'@'%';
+</code></pre></div></div>
+
+<p>위 명령어에서 <code class="highlighter-rouge">%</code>를 <code class="highlighter-rouge">localhost</code>로 대체해 쓸 수 있지만,  유효한 호스트를 더 명확히 표현할 수 있기에 사용했습니다.</p>
+
+<p>DB에서의 설정은 모두 끝이 났습니다.</p>
+
+<h1 id="2-sqlalchemy-설치-및-활용">2. sqlalchemy 설치 및 활용</h1>
+
+<p>저는 anaconda의 jupyter 환경에서 작업을 진행했으므로 conda prompt에서 sqlalchemy를 설치하였습니다.</p>
+
+<p>아래 명령어로 설치를 완료해줍니다. 저 같은 경우에는 <code class="highlighter-rouge">sqlalchemy 1.3.9</code>가 설치되었습니다.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">conda install sqlalchemy
+</span></code></pre></div></div>
+
+<p>먼저 코드 부터 살펴보겠습니다. 아래 코드가 전부입니다.</p>
+
+<p><img src="/images/200316/1.JPG" alt="1" /></p>
+
+<p><code class="highlighter-rouge">DB 연결</code> 부분부터 살펴보겠습니다.</p>
+
+<p><code class="highlighter-rouge">SQLALCHEMY_DATABASE_URI</code> 변수에 할당하는 string은 입력한 내용을 분리하면</p>
+
+<ul>
+  <li><code class="highlighter-rouge">mysql+mysqlconnect</code>: 사용할 DB를 선언,</li>
+  <li><code class="highlighter-rouge">yeom:yeom</code>: 각각 DB의 user 이름, password 정보</li>
+  <li><code class="highlighter-rouge">localhost:3306</code>: 각각 host와 port번호</li>
+  <li><code class="highlighter-rouge">price</code>: 사용할 DB 이름</li>
+</ul>
+
+<p>으로서 일종의 <code class="highlighter-rouge">configuration</code>을 정의해 주는 것입니다.</p>
+
+<p>이를 <code class="highlighter-rouge">create_engine</code> 메소드를 통해서 dataframe에게 DB 정보를 건내줄 <code class="highlighter-rouge">engine</code> 변수를 만들게 됩니다.</p>
+
+<p><code class="highlighter-rouge">WTI to DB</code> 부분에서는 미리 다운로드 받은 <a href="https://fred.stlouisfed.org/series/DCOILWTICO">WTI.csv</a> 데이터를 pandas를 통해 dataframe 형식으로 읽어 들입니다.</p>
+
+<p>간단한 전처리 후에 <code class="highlighter-rouge">to_sql</code> 메소드를 통해 DB에 데이터를 Insert합니다.</p>
+
+<p>여기서 <code class="highlighter-rouge">name</code>은 database 테이블의 이름으로서 테이블이 존재하지 않으면, 테이블을 만들어 데이터를 Insert하게 됩니다.</p>
+
+<p><code class="highlighter-rouge">con</code>은 위에서 만든 <code class="highlighter-rouge">engine</code> 변수를 던져주고, <code class="highlighter-rouge">index=False</code>함으로써 dataframe의 index는 Insert하지 않음을 명시해주게 되었습니다.</p>
+
+<p>데이터가 DB에 들어갔는지 확인해 보고 마치도록 하겠습니다.</p>
+
+<p><img src="/images/200316/2.JPG" alt="2" /></p>
+
+:ET

@@ -1,33 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://yeomkyeorae.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yeomkyeorae.github.io/" rel="alternate" type="text/html" /><updated>2020-03-15T15:21:18+09:00</updated><id>https://yeomkyeorae.github.io/feed.xml</id><title type="html">Yeomlog</title><subtitle>An amazing website.</subtitle><author><name>Yeom, Kyoerae</name></author><entry><title type="html">서시 - 윤동주</title><link href="https://yeomkyeorae.github.io/%EC%9C%A4%EB%8F%99%EC%A3%BC/si-susi/" rel="alternate" type="text/html" title="서시 - 윤동주" /><published>2020-03-14T00:00:00+09:00</published><updated>2020-03-13T14:00:00+09:00</updated><id>https://yeomkyeorae.github.io/%EC%9C%A4%EB%8F%99%EC%A3%BC/si-susi</id><content type="html" xml:base="https://yeomkyeorae.github.io/%EC%9C%A4%EB%8F%99%EC%A3%BC/si-susi/"></content><author><name>Yeom, Kyoerae</name></author><summary type="html">윤동주 시인의 작품 모음 - 서시</summary></entry><entry><title type="html">github.io 블로그 시작하기</title><link href="https://yeomkyeorae.github.io/blog/test/" rel="alternate" type="text/html" title="github.io 블로그 시작하기" /><published>2020-03-14T00:00:00+09:00</published><updated>2019-04-13T22:06:00+09:00</updated><id>https://yeomkyeorae.github.io/blog/test</id><content type="html" xml:base="https://yeomkyeorae.github.io/blog/test/">&lt;p&gt;GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
-GitHub Blog 서비스의 이름은 Pages이다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-16T22:25:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yeomlog</title><subtitle>An amazing website.</subtitle><author><name>Yeom, Kyoerae</name></author><entry><title type="html">sqlalchemy를 이용해서 pandas로 MariaDB에 데이터 insert하기</title><link href="http://localhost:4000/pandas/sqlalchemy/" rel="alternate" type="text/html" title="sqlalchemy를 이용해서 pandas로 MariaDB에 데이터 insert하기" /><published>2020-03-16T00:00:00+09:00</published><updated>2020-03-16T00:00:00+09:00</updated><id>http://localhost:4000/pandas/sqlalchemy</id><content type="html" xml:base="http://localhost:4000/pandas/sqlalchemy/">&lt;p&gt;MySQL workbench나 console 등을 활용해서 DB에 데이터를 Insert 할 수도 있지만 파이썬의 경우에는 여러 패키지를 활용해서 DB에 접근할 수도 있습니다.&lt;/p&gt;
 
-&lt;p&gt;Pages가 다른 블로그 플랫폼 보다 편한 것 같아서 마음에 든다.
-다른 사람들도 같이 많이 사용했으면 좋겠다는 생각이 든다.&lt;/p&gt;
+&lt;p&gt;여기서는 sqlalchemy를 사용해서 DB에 데이터(WTI, 서부 텍사스 중질유)를 Insert 해보도록 하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;YFM에서 정의한 제목을 이중 괄호 구문으로 본문에 추가할 수 있다.
-이 글의 제목은 github.io 블로그 시작하기이고
-마지막으로 수정된 시간은 2019-04-13 08:06:00 -0500이다.&lt;/p&gt;</content><author><name>Yeom, Kyoerae</name></author><category term="Blog" /><summary type="html">GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://yeomkyeorae.github.io/jekyll/update/first-post/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-10-20T21:26:28+09:00</published><updated>2017-10-20T21:26:28+09:00</updated><id>https://yeomkyeorae.github.io/jekyll/update/first-post</id><content type="html" xml:base="https://yeomkyeorae.github.io/jekyll/update/first-post/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;sqlalchemy.org&quot;&gt;sqlalchemy.org&lt;/a&gt;에서는 sqlalchemy를 어플리케이션 개발자들에게 SQL의 유연성과 파워풀함을 제공해주는 파이썬 toolkit 또는 ORM(Object Relational Mapper)라고 표현했네요.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;저는 Anaconda3 환경에서 진행했습니다.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;h1 id=&quot;1-db-user-생성-및-권한-부여&quot;&gt;1. DB user 생성 및 권한 부여&lt;/h1&gt;
 
-&lt;p&gt;​&lt;code class=&quot;highlighter-rouge&quot;&gt;python
-def print_hi(name):
-  print(&quot;hello&quot;, name)
-print_hi('Tom')
-​&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;여기서 DB는 &lt;a href=&quot;https://downloads.mariadb.org/&quot;&gt;MariaDB 10.4.12 버전&lt;/a&gt;을 설치해 사용했습니다. DB 설치법을 다루지는 않겠습니다.&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>Yeom, Kyoerae</name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">hihihihi!</title><link href="https://yeomkyeorae.github.io/jekyll/update/haha-yeom/" rel="alternate" type="text/html" title="hihihihi!" /><published>2017-10-20T21:26:28+09:00</published><updated>2017-10-20T21:26:28+09:00</updated><id>https://yeomkyeorae.github.io/jekyll/update/haha-yeom</id><content type="html" xml:base="https://yeomkyeorae.github.io/jekyll/update/haha-yeom/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;p&gt;먼저,  아래와 같은 명령어로 user를 생성합니다. user 이름과 비밀번호를  동일하게 &lt;code class=&quot;highlighter-rouge&quot;&gt;yeom&lt;/code&gt;으로 만들겠습니다.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE USER 'yeom' IDENTIFIED BY 'yeom';
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;이제 데이터를 넣을  &lt;code class=&quot;highlighter-rouge&quot;&gt;price&lt;/code&gt; database를 생성하도록 하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;​&lt;code class=&quot;highlighter-rouge&quot;&gt;python
-def print_hi(name):
-  print(&quot;hello&quot;, name)
-print_hi('Tom')
-​&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE DATABASE price;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>Yeom, Kyoerae</name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;p&gt;user &lt;code class=&quot;highlighter-rouge&quot;&gt;yeom&lt;/code&gt;이 &lt;code class=&quot;highlighter-rouge&quot;&gt;price&lt;/code&gt;  database에 접근할 수 있는 권한을 부여하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;권한을 주지 않으면 &lt;code class=&quot;highlighter-rouge&quot;&gt;Access Denied&lt;/code&gt; 오류가 발생할 수 있으므로 이를 방지하고자 함입니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GRANT ALL PRIVILEGES ON alchemy.* TO 'yeom'@'%';
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 명령어에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;를 &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost&lt;/code&gt;로 대체해 쓸 수 있지만,  유효한 호스트를 더 명확히 표현할 수 있기에 사용했습니다.&lt;/p&gt;
+
+&lt;p&gt;DB에서의 설정은 모두 끝이 났습니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;2-sqlalchemy-설치-및-활용&quot;&gt;2. sqlalchemy 설치 및 활용&lt;/h1&gt;
+
+&lt;p&gt;저는 anaconda의 jupyter 환경에서 작업을 진행했으므로 conda prompt에서 sqlalchemy를 설치하였습니다.&lt;/p&gt;
+
+&lt;p&gt;아래 명령어로 설치를 완료해줍니다. 저 같은 경우에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;sqlalchemy 1.3.9&lt;/code&gt;가 설치되었습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;conda install sqlalchemy
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;먼저 코드 부터 살펴보겠습니다. 아래 코드가 전부입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/200316/1.JPG&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DB 연결&lt;/code&gt; 부분부터 살펴보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SQLALCHEMY_DATABASE_URI&lt;/code&gt; 변수에 할당하는 string은 입력한 내용을 분리하면&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql+mysqlconnect&lt;/code&gt;: 사용할 DB를 선언,&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;yeom:yeom&lt;/code&gt;: 각각 DB의 user 이름, password 정보&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3306&lt;/code&gt;: 각각 host와 port번호&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;price&lt;/code&gt;: 사용할 DB 이름&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;으로서 일종의 &lt;code class=&quot;highlighter-rouge&quot;&gt;configuration&lt;/code&gt;을 정의해 주는 것입니다.&lt;/p&gt;
+
+&lt;p&gt;이를 &lt;code class=&quot;highlighter-rouge&quot;&gt;create_engine&lt;/code&gt; 메소드를 통해서 dataframe에게 DB 정보를 건내줄 &lt;code class=&quot;highlighter-rouge&quot;&gt;engine&lt;/code&gt; 변수를 만들게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;WTI to DB&lt;/code&gt; 부분에서는 미리 다운로드 받은 &lt;a href=&quot;https://fred.stlouisfed.org/series/DCOILWTICO&quot;&gt;WTI.csv&lt;/a&gt; 데이터를 pandas를 통해 dataframe 형식으로 읽어 들입니다.&lt;/p&gt;
+
+&lt;p&gt;간단한 전처리 후에 &lt;code class=&quot;highlighter-rouge&quot;&gt;to_sql&lt;/code&gt; 메소드를 통해 DB에 데이터를 Insert합니다.&lt;/p&gt;
+
+&lt;p&gt;여기서 &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;은 database 테이블의 이름으로서 테이블이 존재하지 않으면, 테이블을 만들어 데이터를 Insert하게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;con&lt;/code&gt;은 위에서 만든 &lt;code class=&quot;highlighter-rouge&quot;&gt;engine&lt;/code&gt; 변수를 던져주고, &lt;code class=&quot;highlighter-rouge&quot;&gt;index=False&lt;/code&gt;함으로써 dataframe의 index는 Insert하지 않음을 명시해주게 되었습니다.&lt;/p&gt;
+
+&lt;p&gt;데이터가 DB에 들어갔는지 확인해 보고 마치도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/200316/2.JPG&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;</content><author><name>Yeom, Kyoerae</name></author><category term="python" /><category term="mariadb" /><category term="pandas" /></entry></feed>
