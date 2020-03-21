@@ -1,6 +1,6 @@
 ---
 title: "ECMAscript6(ES6, ECMAscript2015)에 대해서 알아보자 ",
-excerpt: "",
+excerpt: "ECMAscript6",
 Toc: true,
 Toc_sticky: true
 Toc_label: "페이지 주요 목차"
