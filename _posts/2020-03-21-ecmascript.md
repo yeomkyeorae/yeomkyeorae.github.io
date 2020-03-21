@@ -85,11 +85,63 @@ let LetFunction = function() {
 아래 코드처럼 변수에 새로운 값을 재할당하면 `Uncaught TypeError`가 발생하게 됩니다.
 
 ```
-const num = 100;
-num = 1000; 	// Uncaught TypeError 오류 발생
+const num = 100
+num = 1000 		// Uncaught TypeError 오류 발생
 ```
 
 
 
 ### 3. Arrow 함수
 
+`=>` 기호를 사용해서 함수를 표현할 수 있게 되었습니다. 기존 함수를 정의할 때는 `function`과 `return` 키워드를 사용했지만, 간단한 함수의 경우에는 `=>`를 사용해서 간략하게 함수를 정의할 수 있습니다.
+
+```
+// ES5
+var sum = function(x, y) {
+	return x + y
+}
+
+// ES6
+const sum = (x, y) => x + y
+```
+
+`(x, y)`와 같이 괄호를 사용해서 함수의 인자를 표현하고 `=>` 화살표 다음 그 `return` 값을 표현할 수 있습니다.
+
+arrow 함수는 `var`보다는 `const` 를 사용하는 게 더 나은 방법이라고 합니다. 그 이유는 함수 표현이 항상 상수(const) 값을 나타내기 때문이라고 합니다. arrow 함수에서는 `this` 인자를 사용할 수 없습니다.
+
+
+
+### 4. Class
+
+객체를 표현할 수 있는 `class` 키워드가 등장했습니다. 예제를 먼저 보겠습니다.
+
+```
+class Friend {
+	constructor(nickname) {
+		this.nickname = nickname
+	}
+}
+myFriend = new Friend("babo")
+```
+
+클래스 내부에 `constructor` 메소드를 통해 클래스의 property를 할당할 수 있습니다. 정의된 클래스를 `new` 인자를 통해서 객체를 생성할 수 있습니다.
+
+
+
+### 5. Array의 find 메소드
+
+`python`의 `list`와 유사한 `javascript`의 `array`의 메소드에 `find`가 생겼습니다. `find`는 함수를 인자로 받아 `array`가 가지는 값을 순서대로 판별합니다. 함수의 기준에 맞는 첫번째 array 값이 반환됩니다. 
+
+```
+function myFunction(value, index, array) {
+	return value < 3
+}
+
+var numbers = [5, 7, 3, 2, 1]
+var underThree = numbers.find(myFunction)
+console.log(underThree)  // 2
+```
+
+`myFunction` 은 3보다 작은 값을 반환하는 함수이므로 `find`는 `number`에 있는 element 중 3보다 작은 2를 반환하게 됩니다. (1도 해당되지만 2가 먼저 등장하기 때문에 2를 반환합니다.)
+
+그 외에 `Array.findIndex()`, `Number` 객체의 다양한 property들이 등장하였습니다.
