@@ -1,6 +1,6 @@
 ---
 title: "sqlalchemy를 이용해서 pandas로 MariaDB에 데이터 insert하기"
-excerpt: ""
+excerpt: "python, maridDB, pandas"
 toc: true
 toc_sticky: true
 toc_label: "페이지 주요 목차"

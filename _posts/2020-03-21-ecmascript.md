@@ -1,6 +1,6 @@
 ---
 title: "ECMAscript6(ES6, ECMAscript2015)에 대해서 알아보자"
-excerpt: "ECMAscript6"
+excerpt: "ECMAscript6 문법"
 toc: true
 toc_sticky: true
 toc_label: "페이지 주요 목차"
@@ -20,7 +20,76 @@ ES는 Ecma 인터내셔널이 만든 기술 규격인 `ECMA-262`에서 정의한
 
 
 
-# 1. ECMAscript6(ES6)
+## 1. ECMAscript6(ES6)
+
+ECMAscript6에서 6은 6th Edition임을 의미한다. ECMAscript 2015라고도 불리우는데 단순히 2015년도에 발표했기 때문입니다. ES6기존 ES5와 다른 점은 let, const의 사용, 화살표를 이용한 함수 표현 등이 있습니다. 
+
+ `javascript` 예제를 기준으로 한번 살펴보도록 하겠습니다.
 
 
+
+### 1. let
+
+ES6 이전에는 재선언과 재할당이 가능한 `var` 을 사용해 변수를 정의했었습니다. `함수스코프`를 갖는 `var`와 다른  `let`의 특징은 `let`의 경우에는 `재선언`이 불가능하며, `블록스코프`를 갖는다는 점입니다.
+
+`블록스코프`는 아래 코드처럼 말 그대로 변수의 유효범위가 `{ }` 괄호 안에서 유지된다는 의미입니다.
+
+```
+var num = 100;
+// num is 100
+{
+	let num = 1000;
+    // num is 1000
+}
+// num is 100
+```
+
+
+
+예제를 보면서 `let`을 이해해 보도록 하겠습니다. 
+
+각각의 함수 내에  `var` 형식의 `myVar` 변수와 `let` 형식의 `myLet` 변수를 선언한 뒤 `블록스코프` 내부에서 변수를 재할당 한 후 블록 바깥에서 그 값을 확인해 보도록 하겠습니다.
+
+```
+let varFunction = function() {
+	var myVar = 0
+	if (true) {
+		var myVar = 1
+		console.log(myVar) // 1
+	}
+	console.log(myVar)     // 1
+}
+```
+
+```
+let LetFunction = function() {
+	let myLet = 0
+	if (true) {
+		let myLet = 1
+		console.log(myLet)  // 1
+	}
+	console.log(myLet)      // 0
+}
+```
+
+위의 코드는 각각 `var`와 `let` 형식을 활용해 블록 내부에서 변수를 재할당 하였습니다. 
+
+함수 스코프를 갖는 `var`의 경우에는 블록 내부에서 변수를 `재할당`한 것이 함수 전체에 영향을 끼쳐서 둘 다 `1`을 출력했습니다. 반면, `let`의 경우에는 블록 내부에서만 `재할당`이 영향을 끼쳐서 두 번째 출력에는 기존 할당 값인 `0`을 출력하였습니다.
+
+
+
+### 2. const
+
+`const`는 ES6에서 `let`과 함께 등장한 변수 형식입니다. `let`과 마찬가지로 `블록스코프`를 가지며 `let`과의 차이점은 변수 `재할당`과 `재선언`이 모두 불가능하다는 점입니다. 
+
+아래 코드처럼 변수에 새로운 값을 재할당하면 `Uncaught TypeError`가 발생하게 됩니다.
+
+```
+const num = 100;
+num = 1000; 	// Uncaught TypeError 오류 발생
+```
+
+
+
+### 3. Arrow 함수
 
