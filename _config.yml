@@ -22,7 +22,7 @@ title                    : "Yeomlog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Yeom, Kyoerae"
-description              : "An amazing website."
+description              : "Kyeorae Yeom's BLOG"
 url                      : "https://yeomkyeorae.github.io"
 baseurl                  : ""
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -120,7 +120,7 @@ author:
       url: mailto:duarufp06@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://yeomlog.herokuapp.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
