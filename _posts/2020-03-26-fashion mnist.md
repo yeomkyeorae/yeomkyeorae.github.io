@@ -1,5 +1,5 @@
 ---
-title : "Tensorflow 2.0으로 Fashion MNIST 데이터 classification 하기"
+title : "Tensorflow2.0으로 Fashion MNIST 분류하기"
 excerpt: "Fashion MNIST 데이터 Convolution Layer 적용하기"
 toc: true
 toc_sticky: true

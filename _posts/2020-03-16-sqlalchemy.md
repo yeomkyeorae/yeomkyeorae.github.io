@@ -1,5 +1,5 @@
 ---
-title: "sqlalchemy를 이용해서 pandas로 MariaDB에 데이터 insert하기"
+title: "sqlalchemy와 pandas로 MariaDB에 데이터 insert하기"
 excerpt: "python, maridDB, pandas"
 toc: true
 toc_sticky: true
