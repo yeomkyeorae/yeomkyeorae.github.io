@@ -114,7 +114,7 @@ export default App;
 ```
 
 - function을 활용해 `Food`라는 이름의 component를 만들고, App component 안에 `<Food fav="음식 이름" />`로 `Food` component를 생성했습니다. 생성할 때 `fav`라는 변수에 "음식이름"을 할당해 전달하면 `Food`는 object 형식의 props 인자로 받아 function 내부에서 활용할 수 있습니다. `ES6` 문법에서는 `{ props.fav }`와 같이 접근합니다.
-- 아래와 같은 형식으로 사용할 수도 있습니다.
+- 아래와 같은 형식으로 사용할 수 있습니다.
 
 ```javascript
 function Food({fav}) {
