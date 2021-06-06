@@ -13,7 +13,10 @@ tags:
 
 이 글은 정재남 개발자님의 인프런 강의인 <a href="https://www.inflearn.com/course/ecmascript-6-flow" target="_blank">JavaScript ES6+ 제대로 알아보기 초급편</a>을 정리한 내용입니다.
 
- ## 1. 블록 스코프(block scope)
+
+
+## 1. 블록 스코프(block scope)
+
 - 함수 스코프: 함수에 의해서 생기는 변수의 유효 범위. 기존 `var` 해당.
 - 블록 스코프: 블록 `{}`에 의해서 생기는 변수의 유효 범위. `let`, `const` 해당.
 
