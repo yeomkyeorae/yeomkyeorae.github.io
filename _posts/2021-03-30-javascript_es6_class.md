@@ -78,6 +78,9 @@ class Person {
 
 ## 2. Class 개념
 1. `class`의 선언은 아래와 같은 방식을 사용할 수 있다.
+
+
+
 ```javascript
 // 클래스 리터럴
 class Person1 {
@@ -98,6 +101,9 @@ let Person2 = class {
 
 
 2. `class`는 `let, const`와 마찬가지로 TDZ가 존재하며, 블록스코프를 갖는다. 또한 `Class` 내부는 `strict mode`가 강제된다.
+
+
+
 ```javascript
 if(true) {
   class A { }
@@ -113,6 +119,9 @@ const c = new A();	// reference error
 
 
 3. `class` 내부에서 정의한 메소드들은 `prototype`으로 접근했을 때 열거 대상에서 제외된다는 특징을 갖는다.
+
+
+
 ```javascript
 class A {
   a() {}
@@ -129,7 +138,12 @@ for(let p in A.prototype) {
 
 4. `class`에서 `new` 명령어로 호출할 수 있는 메소드는 `constructor`가 유일하다. 또한 `class`는 생성자 함수로서 작동해서 `new` 명령어 없이는 호출할 수 없다.
 
+
+
 5. `class`를 선언할 때 `constructor`에서 `class`의 변수를 바꾸고자 할 때는 `class`의 변수가 `const`처럼 작동하지만, 인스턴스 생성 후 `class`의 변수를 바꾸고자 할 때는 `let`처럼 작동한다.
+
+
+
 ```javascript
 class C {
   constructor() {
@@ -191,6 +205,9 @@ class A {
 
 ## 3. 상속
 기존에 class 이전에 생성자 함수로 상속을 구현하기 위해서 하위 개념 함수의 prototype에 상위 개념 함수를 new 명령어로 인스턴스를 만들어 대입하는 과정을 활용했다. 하지만 class에서는 단순히 `extends`를 활용하면 가능하다.
+
+
+
 ```javascript
 class Square {
   constructor(width) {
@@ -212,9 +229,15 @@ class Rectangle extends Square {
 const rect = new Rectange(10, 30);
 console.log(rect.getArea());	// 300
 ```
+
+
+
 `super()`는 상위 클래스의 constructor를 호출하는 함수이고, constructor 안에서만 호출이 가능하다. 유의할 점은 `super()`는 constructor 내부에서 `this`를 사용하기 이전에 사용해야 한다는 점이다. 위에서 `super(width)`는 `this.width = width`와 같다. `Rectangle`에 사각형 넓이를 구하는 메소드가 없음에도 호출이 가능한 이유는 상위 클래스인 `Square`를 상속받았기 때문이다. `Rectangle`에 메소드가 정의되지 않았기 때문에 `__proto__`를 타고 올라가 `Square`의 메소드에 접근할 수 있게 된다.
 
 class가 상속받을 수 있는 것에는 class뿐만 아니라 생성장 함수도 상속을 받을 수 있다.
+
+
+
 ```javascript
 function Person(name) {
   this.name = name;
@@ -230,7 +253,12 @@ class Employee extends Person {
 const kr = new Employee('겨레', 'Master');
 ```
 
+
+
 class는 기존에 정의된 내장 함수를 상속해서 새롭게 메소드를 재정의(오버라이딩)할 수도 있다.
+
+
+
 ```javascript
 class NewArr extends Array {
   toString() {
@@ -242,9 +270,14 @@ const arr = new NewArr(100, 200, 300);
 console.log(arr.toString());	// [100, 200, 300]
 ```
 
+
+
 메소드 내부에서 사용하는 `super` 키워드는 상위 클래스의 메소드에 접근할 수 있도록 한다. 위 예제에서 `NewArr` 클래스에서 `toString` 사용한 `super.toString`은 `Array`에 정의된 `toString` 메소드이다. 
 
 javascript class에서 추상 클래스가 존재하지 않지만 비슷하게 활용할 수 있다.
+
+
+
 ```javascript
 class Shape {
   constructor() {
@@ -255,6 +288,8 @@ class Shape {
   getSize() {}
 }
 ```
+
+
 
 `private member`는 추가될 예정이라고 하는데 한번 찾아 봐야겠다. 🧐
 
