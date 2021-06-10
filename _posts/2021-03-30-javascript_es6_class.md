@@ -77,7 +77,7 @@ class Person {
 ```
 
 ## 2. Class 개념
-1. `class`의 선언은 아래와 같은 방식을 사용할 수 있다.
+(1)  `class`의 선언은 아래와 같은 방식을 사용할 수 있다.
 
 
 
@@ -100,7 +100,7 @@ let Person2 = class {
 
 
 
-2. `class`는 `let, const`와 마찬가지로 TDZ가 존재하며, 블록스코프를 갖는다. 또한 `Class` 내부는 `strict mode`가 강제된다.
+(2) `class`는 `let, const`와 마찬가지로 TDZ가 존재하며, 블록스코프를 갖는다. 또한 `Class` 내부는 `strict mode`가 강제된다.
 
 
 
@@ -118,7 +118,7 @@ const c = new A();	// reference error
 
 
 
-3. `class` 내부에서 정의한 메소드들은 `prototype`으로 접근했을 때 열거 대상에서 제외된다는 특징을 갖는다.
+(3) `class` 내부에서 정의한 메소드들은 `prototype`으로 접근했을 때 열거 대상에서 제외된다는 특징을 갖는다.
 
 
 
@@ -136,11 +136,11 @@ for(let p in A.prototype) {
 
 
 
-4. `class`에서 `new` 명령어로 호출할 수 있는 메소드는 `constructor`가 유일하다. 또한 `class`는 생성자 함수로서 작동해서 `new` 명령어 없이는 호출할 수 없다.
+(4) `class`에서 `new` 명령어로 호출할 수 있는 메소드는 `constructor`가 유일하다. 또한 `class`는 생성자 함수로서 작동해서 `new` 명령어 없이는 호출할 수 없다.
 
 
 
-5. `class`를 선언할 때 `constructor`에서 `class`의 변수를 바꾸고자 할 때는 `class`의 변수가 `const`처럼 작동하지만, 인스턴스 생성 후 `class`의 변수를 바꾸고자 할 때는 `let`처럼 작동한다.
+(5) `class`를 선언할 때 `constructor`에서 `class`의 변수를 바꾸고자 할 때는 `class`의 변수가 `const`처럼 작동하지만, 인스턴스 생성 후 `class`의 변수를 바꾸고자 할 때는 `let`처럼 작동한다.
 
 
 
@@ -159,7 +159,10 @@ C = '10';
 
 
 
-6. `class` 자체를 함수의 인자로 넘길 수 있다.
+(6) `class` 자체를 함수의 인자로 넘길 수 있다.
+
+
+
 ```javascript
 const instanceGenerator = (className, ...params) => new className(...params);
 
@@ -178,7 +181,10 @@ const kr = instanceGenerator(Person, '겨레');
 
 
 
-7. 대괄호 표기법을 활용해서 `class`의 메소드를 정의할 수 있다. (computed property names)
+(7) 대괄호 표기법을 활용해서 `class`의 메소드를 정의할 수 있다. (computed property names)
+
+
+
 ```javascript
 const method = 'printName';
 class Person {
@@ -194,7 +200,10 @@ class Person {
 
 
 
-8. `generator`를 `class`의 메소드로 정의할 수 있다.
+(8) `generator`를 `class`의 메소드로 정의할 수 있다.
+
+
+
 ```javascript
 class A {
   *gene() {}
