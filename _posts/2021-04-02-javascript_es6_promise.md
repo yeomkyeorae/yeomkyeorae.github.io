@@ -205,8 +205,10 @@ new Promise((resolve, reject) => {
 위에서 `new Erorr`를 `return` 했을 때와 `throw` 했을 때의 차이점도 존재한다. 전자는 `then` 후자는 `catch`에 잡힌다. 특이한 점은 `Promise` 내에서 Erorr를 `throw` 했을 때, `Promise` 내부에서 Error가 발생했음을 `catch`로 인지할 수 있지만, 전체 소스/서비스에 영향을 끼치는 것을 막을 수 있다.
 
 ## 4. 심화
-1. Error Handling
+### 1. Error Handling
+
 각각의 `then`과 `catch`에서의 성공과 실패에 따라 어느 로직을 타는지 예제를 보면서 이해해 보자.
+
 ```javascript
 // 성공 시 바로 다음 then, 실패 시 바로 다음 catch
 asyncThing1()
@@ -223,8 +225,14 @@ asyncThing1()
 	.then(() => console.log('All done'))
 ```
 
-2. Promise.all()
+
+
+### 2. Promise.all()
+
 Promise.all()은 `iterable`의 모든 요소들을 Promise 인스턴스로 간주하여 모두 `fullfilled`되는 경우에 전체 결과들을 배열 형태로 then에 전달하는 역할을 한다. 요소 중 하나라도 `reject` 되는 것이 있으면 그 하나를 `catch`로 전달하고 then은 실행되지 않는다.
+
+
+
 ```javascript
 const arr = [
   1,	// 일반 값은 바로 resolved된 값으로 간주됨
@@ -247,8 +255,12 @@ Promise.all(arr)
 
 
 
-3. Promise.race()
+### 3. Promise.race()
+
 Promise.all과 마찬가지로 `iterable`를 인자로 받지만 차이점은 경주(race)를 통해 가장 먼저 `fullfilled`이나 `reject`된 값을 then이나 catch에 전달한다. 
+
+
+
 ```javascript
 const arr = [
   new Promise(resolve => {
