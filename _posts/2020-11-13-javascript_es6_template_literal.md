@@ -123,6 +123,9 @@ console.log(addedNums);
     - currentValue: 현재 값
     - currentIndex: 현재 인덱스
     - originalArray: 원본 배열
+
+
+
 ```javascript
 const nums = [10, 20, 30];
 const res = nums.reduce(function(acc, value, index) {
@@ -131,13 +134,17 @@ const res = nums.reduce(function(acc, value, index) {
 }, 100);
 
 console.log(res);
-
 // 100, 10, 0
 // 110, 20, 1
 // 130, 30, 2
 // 160
-````
+```
+
+
+
 위의 예제에서 initialValue에 해당하는 100이 제거되면 nums의 첫번째 원소인 10이 initialValue가 되고, 두번째 원소부터 reduce가 적용돼 반복은 총 2회가 된다!
+
+
 
 ## 3. tag function
 
