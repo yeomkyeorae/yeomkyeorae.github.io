@@ -31,14 +31,23 @@ console.log(Array.from(map));
 // 1: ["b", 2]
 // 2: ["c", 3]
 ```
+
+
+
 - 펼치기 연산자(spread operator)를 통해 배열로 전환이 가능하다.
 ```javascript
 const arrFromMap = [...map];
 ```
+
+
+
 - 해체 할당이 가능하다
 ```javascript
 const [mapA, ,mapC] = map; 
 ```
+
+
+
 - for ... of를 사용 가능하다.
 ```javascript
 for(let x of [1, 2, 3]) {
@@ -49,6 +58,9 @@ for(let x of [1, 2, 3]) {
 // 2
 // 3
 ```
+
+
+
 - `Promise.all`, `Promise.race` 명령을 수행할 수 있다
 ```javascript
 const iterableVar = [
@@ -66,6 +78,9 @@ Promise.all(iterableVar)
 // [10, 20, 1004, '가나다라', 30]
 // Promise.all은 인자로 iterable을 받으며, 모든 결과가 다 나올 때 then 구문을 실행한다.
 ```
+
+
+
 - generator - yield\* 문법으로 이용이 가능하다(yield\*은 각각을 yield로 만들라는 것과 같다)
 ```javascript
 const arr = [1, 2, 3];
@@ -79,6 +94,9 @@ const makeGenerator = iterable => function* (){
 
 const arrGen = makeGenerator(arr)();
 ```
+
+
+
 - 위의 로직들은 [Symbol.iterator]로 반환되는 iterator의 next() 메소드를 기반으로 작동된다! 😳
 
 ## 2. iterator

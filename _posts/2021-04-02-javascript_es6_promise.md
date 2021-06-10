@@ -245,6 +245,8 @@ Promise.all(arr)
 // [1, "will be resolved", "abcde", ƒ, "즉시 실행 함수"]
 ```
 
+
+
 3. Promise.race()
 Promise.all과 마찬가지로 `iterable`를 인자로 받지만 차이점은 경주(race)를 통해 가장 먼저 `fullfilled`이나 `reject`된 값을 then이나 catch에 전달한다. 
 ```javascript
@@ -265,5 +267,7 @@ Promise.race(arr)
 	.catch(err => console.error(err))
 // 3번 말
 ```
+
+
 
 마지막으로 ES2017에 등장한 [async/await function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function)의 링크를 걸어 놓으면 JavaScript 강의 정리를 마치겠습니다 😎

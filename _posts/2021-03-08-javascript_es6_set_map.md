@@ -19,7 +19,8 @@ tags:
 
 ## 1. Set
 
- ### (1) 기본 개념
+### (1) 기본 개념
+
  `Set`은 말 그대로 중복을 허용하지 않는 집합이다. 파이썬에서 알고리즘 테스트를 준비하면서 set을 사용했던 기억이 있다. 물론 dict를 더 많이 사용하긴 했었지만. `Set`은 `new` 연산자를 활용해서 생성할 수 있다. `Set()` 괄호안에는 Iterable한 객체가 올 수 있다.
  ```javascript
 const arr = [1, 2, 3, 3, 4, 2, 4, 5, 5, 5];
@@ -84,6 +85,9 @@ console.log(s.values());
 `Map`에 대해 알아보기 전에 객체의 단점을 알아 보자.
 
 - iterable 하지 않다. `for ... in`을 쓰면 되지 않는가? 그것은 페이크다!!
+
+
+
 ```javascript
 const obj = {
   name: 'giraffe',
@@ -101,6 +105,9 @@ for(let key in obj) console.log(key, obj[key]);
 // age 29
 // method f () {}
 ```
+
+
+
 위 예제를 보면 객체 프로토타입에 method에 함수를 입력 후 `for ... in` 순회를 한 결과 입력한 함수까지 도출되는 것을 볼 수 있다. 이 결과를 보면 `for ... in` 순회는 `prototype`도 검사하는 것을 알 수 있다. 이를 해결하기 위해 `for ... in` 내부에 `hasOwnProperty` 메소드로 key가 있는 게 맞는지 확인하는 로직을 추가할 수 있다. 
 
 또한 
