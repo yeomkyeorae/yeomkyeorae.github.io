@@ -140,6 +140,7 @@ console.log(res);
 위의 예제에서 initialValue에 해당하는 100이 제거되면 nums의 첫번째 원소인 10이 initialValue가 되고, 두번째 원소부터 reduce가 적용돼 반복은 총 2회가 된다!
 
 ## 3. tag function
+
 tag function은 함수 인자로 template literal을 넘겨주어 첫 번째 인자에는 순수 문자열을 array로 넘겨주고 두 번째 인자부터는 template literal의 string interpolation을 넘겨준다. 예제를 보자.
 ```javascript
 const tag = function(strs, arg1, arg2) {
@@ -158,6 +159,9 @@ console.log(res);
 //	raw: ["내일은 ", "오늘은 ", ""]	아래 String.raw에서 살펴 볼 예정
 //	...
 ```
+
+
+
 특이한 점은 항상 string interpolation의 개수(위에서 args) 보다 항상 문자열이 1개(위에서 strs) 더 많다. strs의 마지막 값으로 ""이 도출된 것을 볼 수 있다. 또한 tag function은 괄호 없이 호출해야 함을 유의한다. 
 
 ### 활용 예시
