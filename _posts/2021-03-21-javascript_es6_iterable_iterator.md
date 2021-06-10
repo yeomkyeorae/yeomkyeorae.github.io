@@ -22,7 +22,10 @@ tags:
 `iterable`은 내부 요소들을 공개적으로 반복할 수 있는 데이터 구조로서, `__proto__`에 `Symbol.iterator` 메소드를 갖고 있다. `Symbol.iterator`를 호출하면 `iterator`를 반환하는데, `next` 메소드를 호출하면 value와 done의 객체를 뱉는다!!! iterable한 것들에는 `array`, `map`, `set`, `string`, `generator` 등이 해당하는데, object는 해당하지 않는다.
 
 `iterable`의 특징
-- Array.from 메소드를 통해 배열로 전환이 가능하다.
+(1) Array.from 메소드를 통해 배열로 전환이 가능하다.
+
+
+
 ```javascript
 const map = new Map([['a', 1], ['b', 2], ['c', 3]]);
 
@@ -34,21 +37,30 @@ console.log(Array.from(map));
 
 
 
-- 펼치기 연산자(spread operator)를 통해 배열로 전환이 가능하다.
+(2) 펼치기 연산자(spread operator)를 통해 배열로 전환이 가능하다.
+
+
+
 ```javascript
 const arrFromMap = [...map];
 ```
 
 
 
-- 해체 할당이 가능하다
+(3) 해체 할당이 가능하다
+
+
+
 ```javascript
 const [mapA, ,mapC] = map; 
 ```
 
 
 
-- for ... of를 사용 가능하다.
+(4) for ... of를 사용 가능하다.
+
+
+
 ```javascript
 for(let x of [1, 2, 3]) {
   console.log(x);
@@ -61,7 +73,10 @@ for(let x of [1, 2, 3]) {
 
 
 
-- `Promise.all`, `Promise.race` 명령을 수행할 수 있다
+(5) `Promise.all`, `Promise.race` 명령을 수행할 수 있다
+
+
+
 ```javascript
 const iterableVar = [
   new Promise((resolve, reject) => { setTimeout(resolve, 5000, 10)}),
@@ -81,7 +96,10 @@ Promise.all(iterableVar)
 
 
 
-- generator - yield\* 문법으로 이용이 가능하다(yield\*은 각각을 yield로 만들라는 것과 같다)
+(6) generator - yield\* 문법으로 이용이 가능하다(yield\*은 각각을 yield로 만들라는 것과 같다)
+
+
+
 ```javascript
 const arr = [1, 2, 3];
 
@@ -97,7 +115,9 @@ const arrGen = makeGenerator(arr)();
 
 
 
-- 위의 로직들은 [Symbol.iterator]로 반환되는 iterator의 next() 메소드를 기반으로 작동된다! 😳
+위의 로직들은 [Symbol.iterator]로 반환되는 iterator의 next() 메소드를 기반으로 작동된다! 😳
+
+
 
 ## 2. iterator
 `iterator`는 반복을 위해 설계된 특별한 인터페이스를 가진 `객체`이다.
@@ -106,6 +126,8 @@ const arrGen = makeGenerator(arr)();
 - `done` 프로퍼티는 `boolean`이다.
 
 아래는 `iterator` 형태의 예시이다.
+
+
 
 ```javascript
 const iterator = {
@@ -123,6 +145,8 @@ const iterator = {
 console.log(iter.next());
 // {done: false, value: 1}
 ```
+
+
 위와 같이 정의한 `iterator`를 object에 `[Symbol.iterator]` 정의해 반환토록 하면 `iterable`한 데이터 구조가 사용할 수 있는 해체 할당 등을 사용할 수도 있다. 아래에서 규칙에 맞게 `iterator`를 구현해 보자. 규칙을 정리하면 다음과 같다.
 
 - object는 Symbol.iterator 메소드가 없다.
@@ -131,6 +155,8 @@ console.log(iter.next());
 - 이 iterator는 next 메소드를 갖는 객체여야 한다.
 - next 메소드를 호출하면 value와 done 프로퍼티를 가지는 object를 반환한다!
 - object는 이제 iterable이다!!!😭
+
+
 
 ```javascript
 const createIterator = function() {
@@ -157,7 +183,10 @@ console.log(...obj);
 // (2) ["a", 1] (2) ["b", 2] (2) ["c", 3] (2) ["d", 4]
 ```
 
+
+
 ## 3. 정리
+
 - for...of, spread operator, forEach 등은 내부적으로
 - Symbol.iterator를 실행한 결과로서 객체를 들고 있으면서
 - 그 객체 내부의 next() 메소드를 done이 true가 될 때까지 반복적으로 호출한다.
