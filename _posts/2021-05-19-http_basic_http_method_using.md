@@ -5,11 +5,9 @@ toc: true
 toc_sticky: true
 toc_label: "페이지 주요 목차"
 categories:
-  - javascript
+  - HTTP
 tags:
-  - javascript
-  - ES6
-
+  - HTTP
 
 ---
 
