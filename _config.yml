@@ -117,7 +117,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: mailto:duarufp06@gmail.com
+      # url: mailto:duarufp06@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://yeomlog.herokuapp.com"
