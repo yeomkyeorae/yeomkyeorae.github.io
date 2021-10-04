@@ -1,8 +1,4 @@
 ---
-
-
-
-```
 title: "TypeScript 기본 문법 정리"
 excerpt: "typescript 기본 문법"
 toc: true
@@ -12,7 +8,6 @@ categories:
   - typesciprt
 tags:
   - typescript
-```
 
 ---
 
