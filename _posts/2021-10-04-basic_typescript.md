@@ -1,3 +1,7 @@
+---
+
+
+
 ```
 title: "TypeScript 기본 문법 정리"
 excerpt: "typescript 기본 문법"
@@ -9,6 +13,8 @@ categories:
 tags:
   - typescript
 ```
+
+---
 
 이 글은 캡틴판교 장기효님의 인프런 강의 [타입스크립트 입문 - 기초부터 실전까지](https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%9E%85%EB%AC%B8/dashboard)의 내용을 예제 코드 위주로 간략하게 정리한 글입니다.
 
