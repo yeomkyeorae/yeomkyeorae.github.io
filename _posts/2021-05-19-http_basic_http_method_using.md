@@ -36,7 +36,9 @@ HTML은 `GET`, `POST`만 지원한다.
 위의 html을 활용해 url로 요청하면 브라우저는 자동으로 HTTP 메시지를 아래와 생성한다.
 >
 >POST /save HTTP/1.1
+>
 >Host: localhost:3000
+>
 >Content-Type: application/x-www-form-urlencoded
 >
 >username=yeom&age=17
@@ -54,22 +56,31 @@ HTML은 `GET`, `POST`만 지원한다.
 ```
 위에서는 `form` 태그에 `enctype` 속성을 추가해 `multipart/form-data`로 데이터를 보낼 것임을 명시하였다. 아래에서 `boundary`는 파싱하는 경계를 의미한다.
 > POST /save HTTP/1.1
+> 
 > Host: localhost:3000
+> 
 > Content-Type: multipart/form-data; boundary=----XXX
 >
 > ----XXX
+> 
 > Content-Disposition: form-data; name="username"
 >
 > yeom
+> 
 > ----XXX
+> 
 > Content-Disposition: form-data; name="age"
 >
 > 17
+> 
 > ----XXX
+> 
 > Content-Disposition: form-data; name="file1"; filename="http.png"
+> 
 > Content-Type: image/png
 >
 > sajldfkjaiwjasdjkdfjlkjlasjdkfjalsdf
+> 
 > ----XXX
 
 #### 4. HTML API 데이터 전송
@@ -97,6 +108,7 @@ API 설계 - POST 기반 등록
 POST 기반 등록의 경우 클라이언트는 등록될 리소스의 정확한 URI를 알지 못한다. 그래서 서버가 새로이 등록된 리소스의 URI를 생성해 응답해 준다.
 >
 > HTTP/1.1 201 Created
+> 
 > Location: /members/100
 
 컬렉션(Collection)?🧐
