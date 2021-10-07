@@ -143,6 +143,7 @@ HTTP 메시지는 HTTP 요청 메시지와 HTTP 응답 메시지로 구분한다
 request-line = `HTTP 메서드`(SP: 공백)`요청 대상`(SP: 공백)`HTTP 버전` CRLF
 
 HTTP 메서드: GET, POST, PUT, DELETE 등
+
 요청 대상: "/"로 시작하는 절대 경로로 작성(절대경로[?쿼리])
 
 (2) 응답 메시지
