@@ -37,7 +37,7 @@ URN의 예시)
 
 #### URI의 뜻
 - Uniform: 리소스를 식별하는 통일된 방식
-- Resource: 자원, URI로 식별하는 있는 모든 것
+- Resource: 자원, URI로 식별하는 모든 것
 - Identifier: 다른 항목과 구분하는데 필요한 정보
 
 #### URL 분석
@@ -47,7 +47,7 @@ URN의 예시)
 >scheme://[userinfo@]host[:port][/path][?query][#fragment]
 
 1. `scheme`: 어떤 방식으로 자원에 접근할 것인가에 대한 약속/규칙(http, https, ftp)
-2.`userinfo`: URL에 사용자 정보를 포함해 인증할 때(사용하지 않음)
+2. `userinfo`: URL에 사용자 정보를 포함해 인증할 때(사용하지 않음)
 3. `host`: 호스트명(도메인명 또는 IP 주소를 직접 입력)
 4. `port`: 포트(생략 가능, 생략 시 http는 80, https는 443)
 5. `path`: 리소스 경로. 계층적 구조로 되어 있다. (/home/file1.jpg, /members)
