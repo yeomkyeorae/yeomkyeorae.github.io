@@ -39,7 +39,7 @@ $ npm install --save aws-sdk multer-s3
 
 ```javascript
 // when deploy
-let upload;				// jpeg 이미지 업로드용 함수
+let upload;	        // jpeg 이미지 업로드용 함수
 let uploadHeic;		// heic 이미지 업로드용 함수
 let deleteImages;	// 이미지 삭제용 함수
 if(process.env.NODE_ENV === 'production') {
@@ -148,7 +148,7 @@ heic 파일 하나 하나를 `uploadHeic` 함수를 호출해 비동기 처리�
 
 아직까지 `Promise` 객체를 사용하는 것이 어색하기만 합니다.
 
-```JavaScript
+```javaScript
 // post heic img
 app.post("/api/img/heic", async (req, res) => {
   const images = req.body.images;
