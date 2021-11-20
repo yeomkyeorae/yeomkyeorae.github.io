@@ -148,7 +148,7 @@ heic 파일 하나 하나를 `uploadHeic` 함수를 호출해 비동기 처리�
 
 아직까지 `Promise` 객체를 사용하는 것이 어색하기만 합니다.
 
-```javaScript
+```javascript
 // post heic img
 app.post("/api/img/heic", async (req, res) => {
   const images = req.body.images;
